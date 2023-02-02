@@ -3,7 +3,9 @@
 clear
 
 ## Read new wallpaper path
-read -p "Enter wallpaper file name: " bgname
+read -p "Enter wallpaper file name [Leaves.jpg]: " bgname
+bgname=${bgname:-Leaves.jpg}
+
 
 # Set wallpaper
 cd ~
