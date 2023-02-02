@@ -6,13 +6,14 @@ clear
 read -p "Enter wallpaper file name: " bgname
 
 # Set wallpaper
-xwallpaper --center ~/Pictures/Wallpapers/$bgname
-sed -i '/xwallpaper/d' ~/.xinitrc
-sed -i "1ixwallpaper --center ~/Pictures/Wallpapers/$bgname" ~/.xinitrc
+cd ~
+xwallpaper --center Pictures/Wallpapers/$bgname
+sed -i '/xwallpaper/d' .xinitrc
+echo "xwallpaper --center ~/Pictures/Wallpapers/$bgname" | cat - .xinitrc > temp && mv temp .xinitrc
 
 ## Generate new pywal colours
-wal -i ~/Pictures/Wallpapers/$bgname
-sed -i "/SchemeUrg/d" ~/.cache/wal/colors-wal-dwm.h
+wal -i Pictures/Wallpapers/$bgname
+sed -i "/SchemeUrg/d" .cache/wal/colors-wal-dwm.h
 
 ## Rebuild suckless programs
 build() {
