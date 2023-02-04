@@ -16,6 +16,7 @@ echo "xwallpaper --center ~/Pictures/Wallpapers/$bgname" | cat - .xinitrc > temp
 ## Generate new pywal colours
 wal -i Pictures/Wallpapers/$bgname
 sed -i "/SchemeUrg/d" .cache/wal/colors-wal-dwm.h
+cp .cache/wal/colors.Xresources .Xresources
 
 ## Rebuild suckless programs
 build() {
