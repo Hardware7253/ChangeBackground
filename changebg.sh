@@ -17,6 +17,7 @@ echo "xwallpaper --center ~/Pictures/Wallpapers/$bgname" | cat - .xinitrc > temp
 wal -i Pictures/Wallpapers/$bgname
 sed -i "/SchemeUrg/d" .cache/wal/colors-wal-dwm.h
 cp .cache/wal/colors.Xresources .Xresources
+xrdb -merge ~/.Xresources
 
 ## Rebuild suckless programs
 build() {
